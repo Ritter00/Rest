@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post</title>
+</head>
+<body>
+    <h2>{{ new_post}}
+        <br>
+    </h2>
+    <p><a href="{{new_post.get_absolute_url}}">{{ new_post.text|truncatechars:50 }}</a> </p>
+    <p><a href="{{ur}}">{{ new_post|truncatechars:50 }}</a> </p>
+</body>
+</html>

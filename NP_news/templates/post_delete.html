@@ -1,0 +1,25 @@
+{% extends 'flatpages/default.html' %}
+{% load custom_filters %}
+{% block title %}
+News
+{% endblock title %}
+
+{% block content %}
+<h2> Вы точно хотите удалить пост?</h2>
+<table>
+        <tr>
+            <td>Заголовок</td>
+            <td>Дата публикации</td>
+            <td>Текст</td>
+        </tr>
+        <tr>
+                <td>{{ post.title}}</td>
+                <td>{{ post.dateCreation|date:'d-M-Y'}}</td>
+                <td><a href="/news/{{post.id}}">{{ post.text|truncatechars:50|censor }}</a></td>
+        </tr>
+</table>
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" value="Подтвердить">
+</form>
+{% endblock content %}

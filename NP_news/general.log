@@ -1,0 +1,221 @@
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 13:52:42,654
+INFO "GET /news/39 HTTP/1.1" 200 3348 basehttp 2021-11-12 13:53:02,623
+INFO "GET /news/ HTTP/1.1" 200 8835 basehttp 2021-11-12 13:53:19,326
+INFO D:\devD\NP_news\NP_news\myapp\views.py changed, reloading. autoreload 2021-11-12 13:54:23,535
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 13:54:30,437
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 14:03:40,410
+INFO "GET /news/56 HTTP/1.1" 200 4373 basehttp 2021-11-12 14:04:48,361
+INFO "GET /news/56 HTTP/1.1" 200 4373 basehttp 2021-11-12 14:04:59,670
+WARNING Not Found: /news/56/5 log 2021-11-12 14:06:19,994
+WARNING "GET /news/56/5 HTTP/1.1" 404 4141 basehttp 2021-11-12 14:06:20,012
+INFO D:\devD\NP_news\NP_news\myapp\views.py changed, reloading. autoreload 2021-11-12 14:08:48,919
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 14:09:35,026
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 14:11:31,403
+INFO D:\devD\NP_news\NP_news\myapp\views.py changed, reloading. autoreload 2021-11-12 14:13:08,099
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 14:13:10,472
+INFO "GET /news/ HTTP/1.1" 200 8835 basehttp 2021-11-12 14:13:25,095
+WARNING Not Found: /favicon.ico log 2021-11-12 14:13:27,387
+WARNING "GET /favicon.ico HTTP/1.1" 404 2433 basehttp 2021-11-12 14:13:27,388
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 15:22:42,254
+INFO "GET /news/56 HTTP/1.1" 200 4373 basehttp 2021-11-12 15:23:05,800
+WARNING Not Found: /favicon.ico log 2021-11-12 15:23:06,420
+WARNING "GET /favicon.ico HTTP/1.1" 404 2433 basehttp 2021-11-12 15:23:06,422
+WARNING Not Found: /news/150 log 2021-11-12 15:23:23,603
+WARNING "GET /news/150 HTTP/1.1" 404 2706 basehttp 2021-11-12 15:23:23,605
+INFO D:\devD\NP_news\NP_news\myapp\views.py changed, reloading. autoreload 2021-11-12 15:23:57,155
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 15:23:59,757
+INFO "GET /news/ HTTP/1.1" 200 8835 basehttp 2021-11-12 15:24:19,614
+ERROR Internal Server Error: /news/56 log 2021-11-12 15:24:21,663
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: post_detail1.html
+ERROR "GET /news/56 HTTP/1.1" 500 82856 basehttp 2021-11-12 15:24:23,491
+INFO D:\devD\NP_news\NP_news\NewsPaper\settings.py changed, reloading. autoreload 2021-11-12 15:28:49,551
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 15:28:55,706
+INFO D:\devD\NP_news\NP_news\NewsPaper\settings.py changed, reloading. autoreload 2021-11-12 15:29:06,028
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 15:29:08,124
+INFO D:\devD\NP_news\NP_news\myapp\views.py changed, reloading. autoreload 2021-11-12 15:29:31,860
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 15:29:33,844
+INFO "GET /news/56 HTTP/1.1" 200 4373 basehttp 2021-11-12 15:29:49,927
+INFO D:\devD\NP_news\NP_news\myapp\views.py changed, reloading. autoreload 2021-11-12 15:30:09,810
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 15:30:11,843
+INFO D:\devD\NP_news\NP_news\myapp\views.py changed, reloading. autoreload 2021-11-12 15:30:43,440
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 15:30:46,102
+INFO "GET /news/ HTTP/1.1" 200 8835 basehttp 2021-11-12 15:31:00,060
+INFO D:\devD\NP_news\NP_news\NewsPaper\settings.py changed, reloading. autoreload 2021-11-12 15:33:59,868
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 15:34:01,985
+INFO D:\devD\NP_news\NP_news\myapp\views.py changed, reloading. autoreload 2021-11-12 15:34:11,271
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 15:34:14,058
+ERROR Internal Server Error: /news/56 log 2021-11-12 15:34:26,569
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: post_detail1.html
+ERROR "GET /news/56 HTTP/1.1" 500 82939 basehttp 2021-11-12 15:34:29,324
+INFO D:\devD\NP_news\NP_news\myapp\views.py changed, reloading. autoreload 2021-11-12 15:41:35,101
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 15:42:06,313
+INFO D:\devD\NP_news\NP_news\NewsPaper\settings.py changed, reloading. autoreload 2021-11-12 15:42:56,728
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 15:42:59,454
+INFO D:\devD\NP_news\NP_news\NewsPaper\settings.py changed, reloading. autoreload 2021-11-12 15:43:26,464
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 15:43:39,947
+INFO D:\devD\NP_news\NP_news\myapp\views.py changed, reloading. autoreload 2021-11-12 15:44:09,131
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 15:44:23,534
+ERROR Internal Server Error: /news/56 log 2021-11-12 15:44:43,325
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: post_detail1.html
+ERROR "GET /news/56 HTTP/1.1" 500 82895 basehttp 2021-11-12 15:44:46,552
+INFO D:\devD\NP_news\NP_news\NewsPaper\settings.py changed, reloading. autoreload 2021-11-12 15:47:55,679
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 15:48:02,903
+ERROR Internal Server Error: /news/56 log 2021-11-12 15:48:17,362
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: post_detail1.html
+ERROR "GET /news/56 HTTP/1.1" 500 82902 basehttp 2021-11-12 15:48:18,654
+INFO D:\devD\NP_news\NP_news\myapp\views.py changed, reloading. autoreload 2021-11-12 15:51:32,717
+INFO Watching for file changes with StatReloader autoreload 2021-11-12 15:51:40,840
+INFO "GET /news/56 HTTP/1.1" 200 4373 basehttp 2021-11-12 15:51:51,847
+INFO Watching for file changes with StatReloader autoreload 2021-11-15 09:42:11,584
+INFO "GET / HTTP/1.1" 200 2218 basehttp 2021-11-15 09:43:00,708
+INFO "GET /static/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 304 0 basehttp 2021-11-15 09:43:01,751
+INFO "GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0 basehttp 2021-11-15 09:43:01,775
+INFO "GET /static/vendor/jquery/jquery.slim.min.js HTTP/1.1" 304 0 basehttp 2021-11-15 09:43:01,789
+WARNING Not Found: /favicon.ico log 2021-11-15 09:43:02,669
+WARNING "GET /favicon.ico HTTP/1.1" 404 2433 basehttp 2021-11-15 09:43:02,670
+INFO D:\devD\NP_news\NP_news\myapp\views.py changed, reloading. autoreload 2021-11-15 09:43:35,548
+INFO Watching for file changes with StatReloader autoreload 2021-11-15 09:43:38,943
+INFO "GET /news/ HTTP/1.1" 200 8835 basehttp 2021-11-15 09:43:42,632
+ERROR Internal Server Error: /news/56 log 2021-11-15 09:43:52,386
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: post_detail.html1
+ERROR "GET /news/56 HTTP/1.1" 500 82930 basehttp 2021-11-15 09:43:53,783
+INFO D:\devD\NP_news\NP_news\myapp\views.py changed, reloading. autoreload 2021-11-15 09:46:41,725
+INFO Watching for file changes with StatReloader autoreload 2021-11-15 09:46:44,309
+INFO D:\devD\NP_news\NP_news\NewsPaper\settings.py changed, reloading. autoreload 2021-11-15 09:47:06,275
+INFO Watching for file changes with StatReloader autoreload 2021-11-15 09:47:08,195
+INFO D:\devD\NP_news\NP_news\NewsPaper\settings.py changed, reloading. autoreload 2021-11-15 09:48:37,681
+INFO Watching for file changes with StatReloader autoreload 2021-11-15 09:48:39,651
+ERROR Internal Server Error: /news/56 log 2021-11-15 09:48:51,489
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: post_detail.html1
+ERROR "GET /news/56 HTTP/1.1" 500 82909 basehttp 2021-11-15 09:48:51,837
+INFO "GET /news/ HTTP/1.1" 200 8835 basehttp 2021-11-15 09:49:31,169
+ERROR Internal Server Error: /news/39 log 2021-11-15 09:49:45,444
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: post_detail.html1
+ERROR "GET /news/39 HTTP/1.1" 500 82928 basehttp 2021-11-15 09:49:45,726
+INFO "GET /news/ HTTP/1.1" 200 7452 basehttp 2021-11-16 15:04:03,950
+ERROR Internal Server Error: /news/37 log 2021-11-16 15:04:06,755
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: post_detail1.html
+ERROR "GET /news/37 HTTP/1.1" 500 82809 basehttp 2021-11-16 15:04:06,812
+INFO Watching for file changes with StatReloader autoreload 2021-11-16 15:04:59,338
+INFO "GET /news/ HTTP/1.1" 200 7452 basehttp 2021-11-16 15:05:08,376
+ERROR Internal Server Error: /news/39 log 2021-11-16 15:05:10,300
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Program Files\python\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Program Files\python\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: post_detail1.html
+ERROR "GET /news/39 HTTP/1.1" 500 82809 basehttp 2021-11-16 15:05:10,326
+INFO D:\devD\NP_news\NP_news\NewsPaper\settings.py changed, reloading. autoreload 2021-11-16 15:06:57,994

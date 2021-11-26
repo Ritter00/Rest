@@ -1,0 +1,22 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+News
+{% endblock title %}
+
+{% block content %}
+<h3> Информация о статье</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Добавить пост">
+</form>
+<br>
+<hr>
+{% if is_not_authors %}
+<button>
+    <a href="{% url 'upgrade' %}">Хочу стать автором</a>
+</button>
+{% endif %}
+
+{% endblock content %}

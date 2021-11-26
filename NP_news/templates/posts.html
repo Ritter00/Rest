@@ -1,0 +1,80 @@
+{% extends 'flatpages/default.html' %}
+{% load custom_filters %}
+{% load tz %} <!-- не забываем загрузить тег для работы с часовыми поясами -->
+
+{% block title %}
+News
+{% endblock title %}
+
+{% block content %}
+{% get_current_timezone as TIME_ZONE %}
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="timezone">Time zone:</label>
+    <select name="timezone">
+        {% for tz in timezones %}
+        <option value="{{ tz }}"{% if tz == TIME_ZONE %} selected{% endif %}>{{ tz }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Set">
+
+</form>
+{{ TIME_ZONE }}
+{{ current_time|timezone:TIME_ZONE }}  <!-- Отображаем время в выбранном часовом поясе  -->
+<br>{{current_time.hour}}
+<style>
+        body {background-color: {% if current_time.hour >= 19 or current_time.hour <= 7 %} darkcyan {% else %} powderblue {% endif %};}
+</style>
+    <h1>Все статьи и новости</h1>
+    <h3> Всего постов: {{ posts|length }}</h3>
+    {% if is_not_authors %}
+    <button><a href="{% url 'upgrade' %}">Хочу стать автором</a></button>
+    {% endif %}
+
+    {% if posts %}
+    <table>
+        <tr>
+            <td>Заголовок</td>
+            <td>Дата публикации</td>
+            <td>Текст</td>
+        </tr>
+        {% for post in posts %} <!-- поменяем posts на filter.qs, т. к. теперь мы забираем уже отобранную по каким-то параметрам информацию -->
+            <tr>
+                <td>
+                    <a href="{% url 'post_detail' post.id %}">{{ post.title|censor }}</a>
+                    <a href="{% url 'post_update' post.id %}"><u>Редактировать</u></a>
+                    <a href="{% url 'post_delete' post.id %}"><u>Удалить</u></a>
+                </td>
+                <td>{{ post.dateCreation|date:'d-M-Y'}}</td>
+                <td><a href="/news/{{post.id}}">{{ post.text|truncatechars:50|censor }}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    {% else %}
+        <h3>Постов пока нет</h3>
+    {% endif %}
+<!-- Проверяем что поддерживается постраничный вывод -->
+    {% if is_paginated %}
+<!-- Если доступна предыдущая страница, то даём ссылку на неё и самую первую страницу -->
+        {% if page_obj.has_previous %}
+            <a href="?page=1">First</a>
+            <a href="?page={{ page_obj.previous_page_number}}"><<<</a>
+        {% endif %}
+<!-- Показываем только текущую страницу и ближайшие к ней, чтобы список не тянулся и не захламлял страницу -->
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+                <a>{{ num }}</a>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                <a href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+<!-- Если есть следующая страница, то даём ссылку на неё и на самую последнюю страницу -->
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">>>></a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+        {% endif %}
+    {% endif %}
+
+
+{% endblock content %}

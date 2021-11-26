@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Posts</title>
+</head>
+<body>
+    <h2>
+        <br> Все новые посты за неделю в разделе: {{ cat }}.
+    </h2>
+    {% for post in posts %}
+    <h5><a href="{{post.get_absolute_url}}">{{ post.title }}</a></h5><hr>
+    {% endfor %}
+
+</body>
+</html>
