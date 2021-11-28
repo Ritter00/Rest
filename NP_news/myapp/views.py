@@ -17,10 +17,11 @@ import logging
 from django.utils.translation import gettext as _
 from django.utils import timezone
 import pytz
+from rest_framework import viewsets, permissions
+from .serializers import *
 
 
 logger = logging.getLogger(__name__)  #  регистрация логгирования
-
 
 
 class PostList(ListView):
@@ -30,7 +31,7 @@ class PostList(ListView):
     queryset = Post.objects.order_by('-id')  # сортируем, еще можно через ordering = ['-id']
     paginate_by = 5  # поставим постраничный вывод в n-элемент
     form_class = PostForm
-    curent_time=timezone.now()
+    curent_time = timezone.now()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(
@@ -38,8 +39,8 @@ class PostList(ListView):
         context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
         context['form'] = PostForm()
         context['is_not_authors'] = not self.request.user.groups.filter(name='authors').exists()
-        context['current_time']= timezone.now()
-        context['timezones']= pytz.common_timezones  #  добавляем в контекст все доступные часовые пояса
+        context['current_time'] = timezone.now()
+        context['timezones'] = pytz.common_timezones  #  добавляем в контекст все доступные часовые пояса
 
         return context
 
@@ -60,18 +61,18 @@ class PostDetail(DetailView):
     template_name = 'post_detail.html'
     queryset = Post.objects.all()
 
-
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         models = Post.objects.all()
         de = kwargs['object'].postCategory
-        context['models']= models
+        context['models'] = models
         context['pop'] = de.all().last().subscribers.all()
         return context
 
     def get_object(self, *args, **kwargs):  # переопределяем метод получения объекта, как ни странно
-        obj = cache.get(f'post-{self.kwargs["pk"]}', None)  # кэш очень похож на словарь, и метод get действует также. Он забирает значение по ключу, если его нет, то забирает None.
+        obj = cache.get(f'post-{self.kwargs["pk"]}', None)
+        # кэш очень похож на словарь, и метод get действует также.
+        # Он забирает значение по ключу, если его нет, то забирает None.
         #  если объекта нет в кэше, то получаем его и записываем в кэш
         if not obj:
             obj = super().get_object(*args, **kwargs)
@@ -105,7 +106,6 @@ class PostCreateView(PermissionRequiredMixin, CreateView):
     permission_required = ('myapp.add_post',)
     form_class = PostForm
 
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['is_not_authors'] = not self.request.user.groups.filter(name='authors').exists()
@@ -118,13 +118,11 @@ class PostCreateView(PermissionRequiredMixin, CreateView):
         cat = Category.objects.get(id=pk).subscribers.all()
         mail = []
         post = f'{self.object.text}'
-        cate= f'{Category.objects.get(id=pk).category}'
+        cate = f'{Category.objects.get(id=pk).category}'
         for subscriber in cat:
             mail.append(subscriber.email)
         #  send_mail.delay(mail, post, cate, url)  # вызываем таск
         return super().form_valid(form)
-
-
 
 
 class PostUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
@@ -189,8 +187,12 @@ def subscriber(request, pk):
         return redirect(request.META.get('HTTP_REFERER'))
 
 
-
 class Index(View):
-    def get (self, request):
-        string= _('Yo, Hello world')
+    def get(self, request):
+        string = _('Yo, Hello world')
         return HttpResponse(string, request)
+
+
+class PostViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.filter(categoryType='AR')
+    serializer_class = PostSerializer
