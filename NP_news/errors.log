@@ -545,3 +545,162 @@ Traceback (most recent call last):
     raise TemplateSyntaxError("Could not parse the remainder: '%s' "
 django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '>=19' from '>=19'
 ERROR "GET /news/ HTTP/1.1" 500 238804 C:\Program Files\python\lib\site-packages\django\core\servers\basehttp.py (exc_info) 2021-11-24 15:00:49,180
+ERROR Internal Server Error: /api/articles/ C:\Program Files\python\lib\site-packages\django\utils\log.py (exc_info) 2021-11-29 10:14:02,139
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\rest_framework\relations.py", line 401, in to_representation
+    url = self.get_url(value, self.view_name, request, format)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\relations.py", line 339, in get_url
+    return self.reverse(view_name, kwargs=kwargs, request=request, format=format)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\reverse.py", line 47, in reverse
+    url = _reverse(viewname, args, kwargs, request, format, **extra)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\reverse.py", line 60, in _reverse
+    url = django_reverse(viewname, args=args, kwargs=kwargs, **extra)
+  File "C:\Program Files\python\lib\site-packages\django\urls\base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Program Files\python\lib\site-packages\django\urls\resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category-detail' not found. 'category-detail' is not a valid view function or pattern name.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\serializers.py", line 745, in data
+    ret = super().data
+  File "C:\Program Files\python\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\serializers.py", line 663, in to_representation
+    return [
+  File "C:\Program Files\python\lib\site-packages\rest_framework\serializers.py", line 664, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Program Files\python\lib\site-packages\rest_framework\serializers.py", line 515, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\relations.py", line 542, in to_representation
+    return [
+  File "C:\Program Files\python\lib\site-packages\rest_framework\relations.py", line 543, in <listcomp>
+    self.child_relation.to_representation(value)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\relations.py", line 416, in to_representation
+    raise ImproperlyConfigured(msg % self.view_name)
+django.core.exceptions.ImproperlyConfigured: Could not resolve URL for hyperlinked relationship using view name "category-detail". You may have failed to include the related model in your API, or incorrectly configured the `lookup_field` attribute on this field.
+ERROR "GET /api/articles/ HTTP/1.1" 500 175376 C:\Program Files\python\lib\site-packages\django\core\servers\basehttp.py (exc_info) 2021-11-29 10:14:02,159
+ERROR Internal Server Error: /api/news/ C:\Program Files\python\lib\site-packages\django\utils\log.py (exc_info) 2021-11-29 10:39:19,155
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\generics.py", line 169, in paginate_queryset
+    if self.paginator is None:
+  File "C:\Program Files\python\lib\site-packages\rest_framework\generics.py", line 162, in paginator
+    self._paginator = self.pagination_class()
+TypeError: 'list' object is not callable
+ERROR "GET /api/news/ HTTP/1.1" 500 101610 C:\Program Files\python\lib\site-packages\django\core\servers\basehttp.py (exc_info) 2021-11-29 10:39:19,175
+ERROR Internal Server Error: /api/articles/ C:\Program Files\python\lib\site-packages\django\utils\log.py (exc_info) 2021-11-29 10:40:33,825
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\generics.py", line 169, in paginate_queryset
+    if self.paginator is None:
+  File "C:\Program Files\python\lib\site-packages\rest_framework\generics.py", line 162, in paginator
+    self._paginator = self.pagination_class()
+TypeError: 'list' object is not callable
+ERROR "GET /api/articles/ HTTP/1.1" 500 102897 C:\Program Files\python\lib\site-packages\django\core\servers\basehttp.py (exc_info) 2021-11-29 10:40:33,830
+ERROR Internal Server Error: /api/articles/ C:\Program Files\python\lib\site-packages\django\utils\log.py (exc_info) 2021-11-29 10:41:07,036
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\generics.py", line 169, in paginate_queryset
+    if self.paginator is None:
+  File "C:\Program Files\python\lib\site-packages\rest_framework\generics.py", line 162, in paginator
+    self._paginator = self.pagination_class()
+TypeError: 'list' object is not callable
+ERROR "GET /api/articles/ HTTP/1.1" 500 103034 C:\Program Files\python\lib\site-packages\django\core\servers\basehttp.py (exc_info) 2021-11-29 10:41:07,048
+ERROR Internal Server Error: /api/articles/ C:\Program Files\python\lib\site-packages\django\utils\log.py (exc_info) 2021-11-29 10:42:09,242
+Traceback (most recent call last):
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Program Files\python\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\python\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Program Files\python\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+  File "C:\Program Files\python\lib\site-packages\rest_framework\generics.py", line 169, in paginate_queryset
+    if self.paginator is None:
+  File "C:\Program Files\python\lib\site-packages\rest_framework\generics.py", line 162, in paginator
+    self._paginator = self.pagination_class()
+TypeError: 'list' object is not callable
+ERROR "GET /api/articles/ HTTP/1.1" 500 103007 C:\Program Files\python\lib\site-packages\django\core\servers\basehttp.py (exc_info) 2021-11-29 10:42:09,249

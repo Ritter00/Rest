@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from myapp.views import PostViewSet
+from myapp.views import PostViewSetAR, PostViewSetNW
 
 router = routers.DefaultRouter()
-router.register(r'articles', PostViewSet)
+router.register(r'articles', PostViewSetAR)
+router.register(r'news', PostViewSetNW)
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),  # подключаем встроенные эндопинты для работы с локализацией
@@ -27,7 +28,7 @@ urlpatterns = [
     path('pages/', include('django.contrib.flatpages.urls')),
     path('news/', include('myapp.urls')),
     path('accounts/', include('allauth.urls')),
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
 ]

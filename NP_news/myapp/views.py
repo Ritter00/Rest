@@ -19,7 +19,7 @@ from django.utils import timezone
 import pytz
 from rest_framework import viewsets, permissions
 from .serializers import *
-
+from rest_framework.response import Response
 
 logger = logging.getLogger(__name__)  #  регистрация логгирования
 
@@ -193,6 +193,16 @@ class Index(View):
         return HttpResponse(string, request)
 
 
-class PostViewSet(viewsets.ModelViewSet):
+class PostViewSetAR(viewsets.ModelViewSet):
     queryset = Post.objects.filter(categoryType='AR')
     serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+class PostViewSetNW(viewsets.ModelViewSet):
+    queryset = Post.objects.filter(categoryType='NW')
+    serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    #def list(self, request, format=None):  # пустой список
+        #return Response([])
